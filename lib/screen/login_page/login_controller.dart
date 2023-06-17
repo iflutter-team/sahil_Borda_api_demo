@@ -8,7 +8,7 @@ class LoginController extends GetxController {
   TextEditingController passwordController = TextEditingController();
 
   void loginButtonCondition() {
-    Get.off(() => const HomePage());
+    Get.to(() => const HomePage());
   }
 
   void goToSignup() {

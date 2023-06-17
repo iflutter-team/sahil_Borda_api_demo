@@ -30,7 +30,8 @@ Widget signupScreenBodyPart() {
 Widget signupUserNameTextField() {
   return GetBuilder<SignupController>(
     builder: (controller) {
-      return textFieldCommon(controller.userNameController, StringRes.userName);
+      return textFieldCommon(
+          controller.firstNameController, StringRes.userName);
     },
   );
 }
@@ -47,7 +48,7 @@ Widget signupMobilNumberTextField() {
   return GetBuilder<SignupController>(
     builder: (controller) {
       return textFieldCommon(
-          controller.numberController, StringRes.mobileNumber);
+          controller.lastNameController, StringRes.mobileNumber);
     },
   );
 }
@@ -62,6 +63,7 @@ Widget signupPasswordTextField() {
 
 Widget submitButton() {
   return GetBuilder<SignupController>(
+    id: "submit",
     builder: (controller) {
       return ElevatedButton(
           onPressed: () => controller.signupSubmit(),
